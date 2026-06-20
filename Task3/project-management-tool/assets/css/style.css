@@ -1,0 +1,381 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   THEME VARIABLES
+========================= */
+:root{
+    --bg1:#667eea;
+    --bg2:#764ba2;
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+
+    --card-bg:rgba(255,255,255,0.95);
+    --text:#1f2937;
+
+    --sidebar:#111827;
+    --sidebar-text:#e5e7eb;
+
+    --success:#16a34a;
+    --error:#dc2626;
+}
+
+/* DARK MODE */
+body.dark{
+    --bg1:#0f172a;
+    --bg2:#1e293b;
+
+    --card-bg:rgba(30,41,59,0.95);
+    --text:#e5e7eb;
+
+    --sidebar:#0b1220;
+    --sidebar-text:#cbd5e1;
+}
+
+/* =========================
+   DEFAULT BODY (DASHBOARD)
+========================= */
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* =========================
+   LOGIN PAGE (IMPORTANT FIX)
+   Only applies when login-wrapper exists
+========================= */
+body:has(.login-wrapper){
+    display:block;
+}
+
+/* LOGIN WRAPPER (CENTER FIX) */
+.login-wrapper{
+    height:100vh;
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* LOGIN BOX */
+.login-box{
+    width:380px;
+    padding:30px;
+
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+
+    text-align:center;
+}
+
+/* LOGIN TITLE */
+.login-box h2{
+    margin-bottom:20px;
+    color:white;
+}
+
+/* LOGIN INPUTS */
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+
+    border:none;
+    border-radius:10px;
+
+    outline:none;
+}
+
+/* LOGIN BUTTON */
+.login-box button{
+    width:100%;
+    padding:12px;
+
+    border:none;
+    border-radius:10px;
+
+    background:var(--primary);
+    color:white;
+
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-box button:hover{
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+}
+
+/* =========================
+   SIDEBAR (DASHBOARD)
+========================= */
+.sidebar{
+    width:250px;
+    height:100vh;
+
+    position:fixed;
+    left:0;
+    top:0;
+
+    background:var(--sidebar);
+    padding:20px;
+}
+
+.sidebar h2{
+    color:white;
+    margin-bottom:20px;
+}
+
+.sidebar a{
+    display:block;
+    padding:12px;
+    margin:6px 0;
+
+    color:var(--sidebar-text);
+    text-decoration:none;
+
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:#1f2937;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main{
+    margin-left:270px;
+    padding:30px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+    background:var(--card-bg);
+    padding:15px 20px;
+
+    border-radius:15px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card{
+    display:inline-block;
+    width:260px;
+
+    background:var(--card-bg);
+    margin:10px;
+    padding:20px;
+
+    border-radius:18px;
+    border-left:5px solid var(--primary);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:34px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+/* =========================
+   FORM
+========================= */
+form{
+    background:var(--card-bg);
+    padding:25px;
+
+    border-radius:15px;
+    max-width:700px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+input,select,textarea{
+    width:100%;
+    padding:12px;
+
+    margin:10px 0;
+
+    border-radius:10px;
+    border:1px solid #d1d5db;
+
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus,select:focus,textarea:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 8px rgba(37,99,235,0.3);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button{
+    background:var(--primary);
+    color:white;
+
+    border:none;
+    padding:12px 20px;
+
+    border-radius:10px;
+    cursor:pointer;
+
+    font-weight:600;
+    transition:0.3s;
+}
+
+button:hover{
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+}
+
+/* =========================
+   TABLES
+========================= */
+table{
+    width:100%;
+    border-collapse:collapse;
+
+    background:var(--card-bg);
+    border-radius:15px;
+    overflow:hidden;
+
+    margin-top:20px;
+}
+
+table th{
+    background:var(--primary);
+    color:white;
+    padding:14px;
+}
+
+table td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+table tr:hover{
+    background:#e0e7ff;
+}
+
+body.dark table tr:hover{
+    background:#334155;
+}
+
+/* =========================
+   NAV BUTTONS
+========================= */
+.nav-btn{
+    display:inline-block;
+    background:var(--primary);
+    color:white;
+
+    padding:10px 18px;
+    border-radius:8px;
+
+    margin:5px;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    background:var(--primary-dark);
+    box-shadow:0 0 15px rgba(37,99,235,0.5);
+}
+
+/* =========================
+   STATUS
+========================= */
+.success{ color:#16a34a; font-weight:bold; }
+.error{ color:#dc2626; font-weight:bold; }
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    margin-top:40px;
+    text-align:center;
+    color:white;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .login-box{
+        width:90%;
+    }
+}
